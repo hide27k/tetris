@@ -2,18 +2,17 @@
 require_relative './provided'
 
 class MyPiece < Piece
-  # The constant All_My_Pieces should be declared here
-  # class array holding all the new pieces to be added and their rotations
+
+  # Array holding all the new pieces to be added and their rotations
   New_Pieces = [rotations([[0,0], [1,0], [2,1], [0,1], [1,1]]),
                 rotations([[-1,0], [0,0], [1,0], [2,0], [3,0]]),
                 rotations([[0,0], [1,0], [1,1]])]
+
   # override All_My_Pieces to add new pieces
   All_My_Pieces = New_Pieces + All_Pieces
 
-  # class array holding a piace when the user user cheating command.
+  # Array holding a piace when the user user cheating command.
   Cheat_Piece = [rotations([[0,0]])]
-
-  # your enhancements here
 
   # class method to choose the next piece
   def self.next_piece (board)
@@ -28,7 +27,7 @@ class MyPiece < Piece
 end
 
 class MyBoard < Board
-  # your enhancements here
+
   # initialize current_block and isCheat that is used for checking if the user
   # is using cheating command or not.
   def initialize (game)
@@ -90,8 +89,7 @@ class MyBoard < Board
 end
 
 class MyTetris < Tetris
-  # your enhancements here
-
+  
   # creates a canvas and the board that interacts with it
   def set_board
     @canvas = TetrisCanvas.new
